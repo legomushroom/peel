@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px"
+	 viewBox="0 0 44 44" enable-background="new 0 0 44 44" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="49.766" width="37.5" bottomLeftOrigin="true" x="3.293" y="-46.872"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="34.273,9.809 34.278,3.714 28.17,3.71 28.174,-2.385 
+	15.958,-2.393 15.955,3.703 9.821,3.7 9.817,9.794 3.798,9.791 3.794,15.887 40.288,15.908 40.293,9.812 "/>
+<rect x="15.941" y="21.992" fill="none" stroke="#000000" stroke-miterlimit="10" width="12.113" height="6.095"/>
+<rect x="15.945" y="15.896" fill="none" stroke="#000000" stroke-miterlimit="10" width="12.114" height="6.096"/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="15.939,28.083 15.936,34.178 15.931,40.273 15.928,46.364 
+	28.041,46.372 28.045,40.28 28.049,34.185 28.053,28.091 "/>
+<rect x="25.008" y="9.807" fill="none" stroke="#000000" stroke-miterlimit="10" width="6.108" height="6.094"/>
+<rect x="15.953" y="3.705" fill="none" stroke="#000000" stroke-miterlimit="10" width="6.108" height="6.095"/>
+</svg>
