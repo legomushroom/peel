@@ -1,6 +1,14 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
+
+// body
+// 	background-image: -o-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
+// 	background-image: -moz-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
+// 	background-image: -webkit-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
+// 	background-image: -ms-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
+// 	background-image: linear-gradient(89deg, #EFEFEF 0%, #F3F3F3 100%);
+
 margin = 12px
 .box
 	transform-style preserve3d
@@ -11,20 +19,44 @@ margin = 12px
 	nw margin
 	se margin
 	perspective 1000px
+
 	&__item
 		position absolute
 		// background rgba(0,0,0,.2)
+		// box-shadow inset 0 0 120px rgba(0,0,0,.04)
+		&:after
+			content ''
+			// hl green
+			position absolute
+			nw 0
+			rect 100%
+			background url('i/shadow-mask.png') no-repeat center center
+			opacity .12
+			background-size 100% 100%
+		&--shadow
+			height 100%
+			width 60%
+			background url('i/box-shadow.png') no-repeat left center
+			background-size auto 100%
+			@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi)
+				background url('i/box-shadow@2x.png') no-repeat left center
+				background-size auto 100%
+			box-shadow none
+			&:after
+				display none
 		&--base
-			nw margin
-			se margin
+			nw 12.95%
+			se 12.95%
 			background: #e3e3e3; /* Old browsers */
-			background: -moz-linear-gradient(left,  #e3e3e3 0%, #ededed 100%); /* FF3.6+ */
-			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e3e3e3), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-			background: -webkit-linear-gradient(left,  #e3e3e3 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-			background: -o-linear-gradient(left,  #e3e3e3 0%,#ededed 100%); /* Opera 11.10+ */
-			background: -ms-linear-gradient(left,  #e3e3e3 0%,#ededed 100%); /* IE10+ */
-			background: linear-gradient(to right,  #e3e3e3 0%,#ededed 100%); /* W3C */
+			background: -moz-linear-gradient(left,  #ddd 0%, #ededed 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ddd), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  #ddd 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  #ddd 0%,#ededed 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  #ddd 0%,#ededed 100%); /* IE10+ */
+			background: linear-gradient(to right,  #ddd 0%,#ededed 100%); /* W3C */
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+			&:after
+				display none
 		&--left
 			nw 0
 			background: #ffffff; /* Old browsers */
@@ -33,7 +65,7 @@ margin = 12px
 			background: -webkit-linear-gradient(left,  #ffffff 0%,#e1e1e1 100%); /* Chrome10+,Safari5.1+ */
 			background: -o-linear-gradient(left,  #ffffff 0%,#e1e1e1 100%); /* Opera 11.10+ */
 			background: -ms-linear-gradient(left,  #ffffff 0%,#e1e1e1 100%); /* IE10+ */
-			background: linear-gradient(to right,  #ffffff 0%,#e1e1e1 100%); /* W3C */
+			background: linear-gradient(to right,  #ffffff 0%,#e1e1e1 100%); /* W3C */			
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=1 ); /* IE6-9 */
 		&--right
 			ne 0
@@ -44,7 +76,7 @@ margin = 12px
 			background-image: linear-gradient(-90deg, #FFFFFF 0%, #E1E1E1 100%);
 		&--left, &--right
 			height 100%
-			width  167px
+			width  12.95%
 		&--top
 			transform rotateX(-75.5deg)
 			transform-origin 50% top
@@ -56,6 +88,9 @@ margin = 12px
 			background: -o-linear-gradient(top,  #ffffff 0%,#e1e1e1 100%); /* Opera 11.10+ */
 			background: -ms-linear-gradient(top,  #ffffff 0%,#e1e1e1 100%); /* IE10+ */
 			background: linear-gradient(to bottom,  #ffffff 0%,#e1e1e1 100%); /* W3C */
+			&:after
+				transform rotate(180deg)
+				opacity .14
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
 		&--bottom
 			transform rotateX(75.5deg)
@@ -66,7 +101,6 @@ margin = 12px
 			background-image: -webkit-linear-gradient(90deg, #FFFFFF 0%, #E1E1E1 100%);
 			background-image: -ms-linear-gradient(90deg, #FFFFFF 0%, #E1E1E1 100%);
 			background-image: linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
-			box-shadow inset 0 0 120px rgba(0,0,0,.05)
 		&--top, &--bottom
 			height 360px
 			width 100%
