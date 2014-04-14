@@ -1,6 +1,21 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
+height = 150px
+width = 223px
+.box-icon
+	height height
+	width width
+	display block
+	position absolute
+	top 50%
+	margin-top -(height/2)
+	left 50%
+	cursor pointer
+
+	&--twitter
+		background url('i/twitter-icon.svg') no-repeat center center
+		margin-left - width
 
 // body
 // 	background-image: -o-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
@@ -13,13 +28,10 @@ margin = 12px
 .box
 	transform-style preserve3d
 	position absolute
-	// width  1295px
-	// height 760px
-	// rect 100%
 	nw margin
 	se margin
 	perspective 1000px
-
+	
 	&__item
 		position absolute
 		// background rgba(0,0,0,.2)
@@ -35,7 +47,7 @@ margin = 12px
 			background-size 100% 100%
 		&--shadow
 			height 100%
-			width 60%
+			width 100%
 			background url('i/box-shadow.png') no-repeat left center
 			background-size auto 100%
 			@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi)
@@ -50,12 +62,12 @@ margin = 12px
 			top 12.95%
 			bottom 12.95%
 			background: #e3e3e3; /* Old browsers */
-			background: -moz-linear-gradient(left,  #ddd 0%, #e9e9e9 100%); /* FF3.6+ */
-			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ddd), color-stop(100%,#e9e9e9)); /* Chrome,Safari4+ */
-			background: -webkit-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* Chrome10+,Safari5.1+ */
-			background: -o-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* Opera 11.10+ */
-			background: -ms-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* IE10+ */
-			background: linear-gradient(to right,  #ddd 0%,#e9e9e9 100%); /* W3C */
+			background: -moz-linear-gradient(left,  #dfdfdf 0%, #ededed 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#dfdfdf), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  #dfdfdf 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  #dfdfdf 0%,#ededed 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  #dfdfdf 0%,#ededed 100%); /* IE10+ */
+			background: linear-gradient(to right,  #dfdfdf 0%,#ededed 100%); /* W3C */
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
 			&:after
 				display none
