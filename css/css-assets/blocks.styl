@@ -1,21 +1,25 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
-height = 150px
-width = 223px
+size = 20px
 .box-icon
-	height height
-	width width
+	width 100px
+	padding-bottom 100%
 	display block
-	position absolute
-	top 50%
-	margin-top -(height/2)
-	left 50%
+	position relative
+	top -50%
+	// left 50%
+	//margin-top -(size/2)
 	cursor pointer
+	background pink
 
-	&--twitter
-		background url('i/twitter-icon.svg') no-repeat center center
-		margin-left - width
+	// &__icon
+	// 	background pink
+	// 	rect 
+
+	// &--twitter
+	// 	background url('i/twitter-icon.svg') no-repeat center center
+	// 	margin-left - width
 
 // body
 // 	background-image: -o-linear-gradient(179deg, #EFEFEF 0%, #F3F3F3 100%);
