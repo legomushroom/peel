@@ -45,18 +45,21 @@ margin = 12px
 			&:after
 				display none
 		&--base
-			nw 12.95%
-			se 12.95%
+			left 12.95%
+			right 12.95%
+			top 12.95%
+			bottom 12.95%
 			background: #e3e3e3; /* Old browsers */
-			background: -moz-linear-gradient(left,  #ddd 0%, #ededed 100%); /* FF3.6+ */
-			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ddd), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-			background: -webkit-linear-gradient(left,  #ddd 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-			background: -o-linear-gradient(left,  #ddd 0%,#ededed 100%); /* Opera 11.10+ */
-			background: -ms-linear-gradient(left,  #ddd 0%,#ededed 100%); /* IE10+ */
-			background: linear-gradient(to right,  #ddd 0%,#ededed 100%); /* W3C */
+			background: -moz-linear-gradient(left,  #ddd 0%, #e9e9e9 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ddd), color-stop(100%,#e9e9e9)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  #ddd 0%,#e9e9e9 100%); /* IE10+ */
+			background: linear-gradient(to right,  #ddd 0%,#e9e9e9 100%); /* W3C */
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
 			&:after
 				display none
+
 		&--left
 			nw 0
 			background: #ffffff; /* Old browsers */
@@ -69,11 +72,14 @@ margin = 12px
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=1 ); /* IE6-9 */
 		&--right
 			ne 0
-			background-image: -o-linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
-			background-image: -moz-linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
-			background-image: -webkit-linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
-			background-image: -ms-linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
-			background-image: linear-gradient(-90deg, #FFFFFF 0%, #E1E1E1 100%);
+			background-image: -o-linear-gradient(0deg, #FFFFFF 0%, #e8e8e8 100%);
+			background-image: -moz-linear-gradient(0deg, #FFFFFF 0%, #e8e8e8 100%);
+			background-image: -webkit-linear-gradient(0deg, #FFFFFF 0%, #e8e8e8 100%);
+			background-image: -ms-linear-gradient(0deg, #FFFFFF 0%, #e8e8e8 100%);
+			background-image: linear-gradient(-90deg, #FFFFFF 0%, #e8e8e8 100%);
+			&:after
+				// display none
+				opacity .02
 		&--left, &--right
 			height 100%
 			width  12.95%
@@ -90,7 +96,7 @@ margin = 12px
 			background: linear-gradient(to bottom,  #ffffff 0%,#e1e1e1 100%); /* W3C */
 			&:after
 				transform rotate(180deg)
-				opacity .14
+				opacity .01
 			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
 		&--bottom
 			transform rotateX(75.5deg)
@@ -101,6 +107,9 @@ margin = 12px
 			background-image: -webkit-linear-gradient(90deg, #FFFFFF 0%, #E1E1E1 100%);
 			background-image: -ms-linear-gradient(90deg, #FFFFFF 0%, #E1E1E1 100%);
 			background-image: linear-gradient(0deg, #FFFFFF 0%, #E1E1E1 100%);
+			&:after
+				transform rotate(180deg)
+				opacity .01
 		&--top, &--bottom
 			height 360px
 			width 100%
