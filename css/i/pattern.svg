@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g opacity="0.5" id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M53.273,30.809 L53.278,24.714 L47.17,24.71 L47.174,18.615 L34.958,18.607 L34.955,24.703 L28.821,24.7 L28.817,30.794 L22.798,30.791 L22.794,36.887 L59.288,36.908 L59.293,30.812 L53.273,30.809 Z" id="Shape" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup" x="35" y="43" width="12.113" height="6.095"></rect>
+        <rect id="Rectangle" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup" x="35" y="37" width="12.114" height="6.096"></rect>
+        <path d="M34.939,49.083 L34.936,55.178 L34.931,61.273 L34.928,67.364 L47.041,67.372 L47.045,61.28 L47.049,55.185 L47.053,49.091 L34.939,49.083 Z" id="Shape" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        <rect id="Rectangle" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup" x="44" y="31" width="6.108" height="6.094"></rect>
+        <rect id="Rectangle" stroke="#FFF" stroke-width="2" sketch:type="MSShapeGroup" x="35" y="25" width="6.108" height="6.095"></rect>
+    </g>
+</svg>
