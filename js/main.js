@@ -20,9 +20,11 @@
       this.$baseShadow = $('#js-base-shadow');
       this.$bottomShadow = $('#js-bottom-shadow');
       this.$leftPeel = $('#js-left-peel');
-      this.$leftPeelInner = this.$leftPeel.children();
+      this.$leftPeelInner = $('#js-left-inner');
+      this.$leftPeelChildren = this.$leftPeel.children();
       this.$rightPeel = $('#js-right-peel');
-      this.$rightPeelInner = this.$rightPeel.children();
+      this.$rightPeelInner = $('#js-right-inner');
+      this.$rightPeelChildren = this.$rightPeel.children();
       return this.$w = $(window);
     };
 
@@ -36,19 +38,47 @@
         left: '-50%'
       });
       this.controller.addTween(start, this.leftPeelTween, dur / 2);
-      this.leftPeelChildrenTween = TweenMax.to(this.$leftPeelInner, 1, {
+      this.leftPeelChildrenTween = TweenMax.to(this.$leftPeelChildren, 1, {
         width: '100%'
       });
       this.controller.addTween(start, this.leftPeelChildrenTween, dur / 2);
+      this.leftPeelTweenInner = TweenMax.to(this.$leftPeelInner, 1, {
+        left: '100%',
+        onStart: (function(_this) {
+          return function() {
+            if (!_this.isChromeFix()) {
+              return;
+            }
+            return _this.$leftPeelInner.css({
+              '-webkit-transform': 'translateX(1px)'
+            });
+          };
+        })(this),
+        onReverseComplete: (function(_this) {
+          return function() {
+            if (!_this.isChromeFix()) {
+              return;
+            }
+            return _this.$leftPeelInner.css({
+              '-webkit-transform': 'translateX(0px)'
+            });
+          };
+        })(this)
+      });
+      this.controller.addTween(start, this.leftPeelTweenInner, dur / 2);
       this.rightPeelTween = TweenMax.to(this.$rightPeel, 1, {
         left: '100%'
       });
       this.controller.addTween(start, this.rightPeelTween, dur / 2);
-      this.rightPeelChildrenTween = TweenMax.to(this.$rightPeelInner, 1, {
+      this.rightPeelChildrenTween = TweenMax.to(this.$rightPeelChildren, 1, {
         width: '100%'
       });
       this.controller.addTween(start, this.rightPeelChildrenTween, dur / 2);
-      start += dur;
+      this.rightPeelTweenInner = TweenMax.to(this.$rightPeelInner, 1, {
+        left: '-100%'
+      });
+      this.controller.addTween(start, this.rightPeelTweenInner, dur / 2);
+      start += dur / 2;
       dur = this.frameDur;
       this.coverBaseShadowTween = TweenMax.to(this.$baseShadow, 1, {
         opacity: 1
@@ -138,6 +168,12 @@
       };
       bindArgs = Array.prototype.slice.call(arguments, 2);
       return wrapper;
+    };
+
+    Main.prototype.isChromeFix = function() {
+      var ver, _ref;
+      ver = parseInt((_ref = window.navigator.appVersion.match(/Chrome\/(\d+)\./)) != null ? _ref[1] : void 0, 10);
+      return (ver > 33) && (navigator.userAgent.toLowerCase().indexOf('chrome') > -1);
     };
 
     Main.prototype.isFF = function() {

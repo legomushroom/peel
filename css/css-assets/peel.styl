@@ -1,12 +1,17 @@
 // PEEL
 @import '../assets/imports.styl'
 
+body
+	background-position 0 0
+
 .peel-item
 	height 100%
 	width 50%
 	top 0
-	background #65B7DF
-	// background dribbbleColor
+	// background #65B7DF url('i/dots-pattern.svg') left top
+	// background #00AEFF url('i/dots-pattern.svg') left top
+	// background-attachment fixed
+	// background-position 0 0
 	position absolute
 	z-index 20
 	&__white, &__gradient
@@ -14,14 +19,27 @@
 		height 100%
 		position absolute
 		top 0
-	&__white
-		box-shadow 2px 2px gs rgba(0,0,0,.1), gs (- gs) 3*gs rgba(0,0,0,.1)
+	&__bg
+		nw 0
+		rect 100%
+		position absolute
+		overflow hidden
+		&__inner
+			background lighten(#00AEFF, 20) url('i/dots-pattern.svg') left top
+			transform translateZ(0)
+			position absolute
+			rect 100%
+			nw 0
 	&__gradient
 		max-width 10*gs
 	&--left
 		left 0
 		.peel-item__white, .peel-item__gradient
 			right 0
+		.peel-item__bg__inner
+			background-position right top
+		.peel-item__white
+			box-shadow 2px 2px gs rgba(0,0,0,.1), gs (- gs) 3*gs rgba(0,0,0,.1), -(gs) (- gs) 3*gs rgba(0,0,0,.1)
 		.peel-item__gradient
 			background: rgb(255,255,255); /* Old browsers */
 			background: -moz-linear-gradient(left,  rgba(255,255,255,1) 2%, rgba(230,230,230,1) 71%, rgba(238,238,238,1) 100%); /* FF3.6+ */
@@ -37,6 +55,8 @@
 		left 50%
 		.peel-item__white, .peel-item__gradient
 			left 0
+		.peel-item__white
+			box-shadow 2px 2px gs rgba(0,0,0,.1), gs (- gs) 3*gs rgba(0,0,0,.1), -(gs) (- gs) 3*gs rgba(0,0,0,.1)
 		.peel-item__gradient
 			background: rgb(238,238,238); /* Old browsers */
 			background: -moz-linear-gradient(left,  rgba(238,238,238,1) 0%, rgba(230,230,230,1) 29%, rgba(255,255,255,1) 98%); /* FF3.6+ */

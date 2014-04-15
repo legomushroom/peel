@@ -15,9 +15,11 @@ class Main
     @$baseShadow = $('#js-base-shadow')
     @$bottomShadow = $('#js-bottom-shadow')
     @$leftPeel  = $('#js-left-peel')
-    @$leftPeelInner  = @$leftPeel.children()
+    @$leftPeelInner  = $('#js-left-inner')
+    @$leftPeelChildren  = @$leftPeel.children()
     @$rightPeel = $('#js-right-peel')
-    @$rightPeelInner  = @$rightPeel.children()
+    @$rightPeelInner  = $('#js-right-inner')
+    @$rightPeelChildren  = @$rightPeel.children()
     @$w = $(window)
 
   events:->
@@ -26,16 +28,30 @@ class Main
     start = 1
     dur = @frameDur
     @leftPeelTween   = TweenMax.to @$leftPeel, 1, left: '-50%'
+
     @controller.addTween start, @leftPeelTween,  dur/2
-    @leftPeelChildrenTween   = TweenMax.to @$leftPeelInner, 1, width: '100%'
+    @leftPeelChildrenTween   = TweenMax.to @$leftPeelChildren, 1, width: '100%'
     @controller.addTween start, @leftPeelChildrenTween,  dur/2
+    @leftPeelTweenInner   = TweenMax.to @$leftPeelInner , 1,
+      left: '100%'
+      onStart: =>
+        if !@isChromeFix() then return
+        @$leftPeelInner.css '-webkit-transform': 'translateX(1px)'
+      onReverseComplete:=>
+        if !@isChromeFix() then return
+        @$leftPeelInner.css '-webkit-transform': 'translateX(0px)'
+
+    @controller.addTween start, @leftPeelTweenInner,  dur/2
 
     @rightPeelTween   = TweenMax.to @$rightPeel, 1, left: '100%'
     @controller.addTween start, @rightPeelTween,  dur/2
-    @rightPeelChildrenTween   = TweenMax.to @$rightPeelInner, 1, width: '100%'
+    @rightPeelChildrenTween = TweenMax.to @$rightPeelChildren, 1, width: '100%'
     @controller.addTween start, @rightPeelChildrenTween,  dur/2
+    @rightPeelTweenInner   = TweenMax.to @$rightPeelInner , 1, left: '-100%'
+    @controller.addTween start, @rightPeelTweenInner,  dur/2
 
-    start += dur
+
+    start += dur/2
     dur = @frameDur
     @coverBaseShadowTween   = TweenMax.to @$baseShadow, 1, opacity: 1
     @coverBottomShadowTween = TweenMax.to @$bottomShadow, 1, opacity: .5
@@ -90,6 +106,10 @@ class Main
       func.apply context, unshiftArgs
     bindArgs = Array::slice.call(arguments, 2)
     wrapper
+
+  isChromeFix:->
+    ver = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)?[1], 10)
+    (ver > 33) and (navigator.userAgent.toLowerCase().indexOf('chrome') > -1)
 
   isFF:->
     navigator.userAgent.toLowerCase().indexOf('firefox') > -1
