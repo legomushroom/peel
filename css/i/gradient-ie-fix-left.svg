@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="137px" height="46px" viewBox="0 0 137 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <linearGradient x1="100%" y1="33.0738184%" x2="0%" y2="33.0738187%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.313390395" offset="0%"></stop>
+            <stop stop-color="#F4F4F4" stop-opacity="0.503890356" offset="30.3176323%"></stop>
+            <stop stop-color="#E6E6E6" stop-opacity="0.715762868" offset="60.5240648%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0.635426241" offset="83.5908987%"></stop>
+            <stop stop-color="#C2C2C2" stop-opacity="0.0162568934" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-1" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" transform="translate(68.500000, 23.000000) scale(-1, 1) translate(-68.500000, -23.000000) " x="0" y="0" width="137" height="46"></rect>
+    </g>
+</svg>
