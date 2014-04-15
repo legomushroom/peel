@@ -19,6 +19,10 @@
       this.$icon3 = $('#js-icon3 .box-icon__content');
       this.$baseShadow = $('#js-base-shadow');
       this.$bottomShadow = $('#js-bottom-shadow');
+      this.$leftPeel = $('#js-left-peel');
+      this.$leftPeelInner = this.$leftPeel.children();
+      this.$rightPeel = $('#js-right-peel');
+      this.$rightPeelInner = this.$rightPeel.children();
       return this.$w = $(window);
     };
 
@@ -27,6 +31,24 @@
     Main.prototype.describeSequence = function() {
       var dur, start;
       start = 1;
+      dur = this.frameDur;
+      this.leftPeelTween = TweenMax.to(this.$leftPeel, 1, {
+        left: '-50%'
+      });
+      this.controller.addTween(start, this.leftPeelTween, dur / 2);
+      this.leftPeelChildrenTween = TweenMax.to(this.$leftPeelInner, 1, {
+        width: '100%'
+      });
+      this.controller.addTween(start, this.leftPeelChildrenTween, dur / 2);
+      this.rightPeelTween = TweenMax.to(this.$rightPeel, 1, {
+        left: '100%'
+      });
+      this.controller.addTween(start, this.rightPeelTween, dur / 2);
+      this.rightPeelChildrenTween = TweenMax.to(this.$rightPeelInner, 1, {
+        width: '100%'
+      });
+      this.controller.addTween(start, this.rightPeelChildrenTween, dur / 2);
+      start += dur;
       dur = this.frameDur;
       this.coverBaseShadowTween = TweenMax.to(this.$baseShadow, 1, {
         opacity: 1

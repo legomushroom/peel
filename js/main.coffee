@@ -14,12 +14,28 @@ class Main
     @$icon3 = $('#js-icon3 .box-icon__content')
     @$baseShadow = $('#js-base-shadow')
     @$bottomShadow = $('#js-bottom-shadow')
+    @$leftPeel  = $('#js-left-peel')
+    @$leftPeelInner  = @$leftPeel.children()
+    @$rightPeel = $('#js-right-peel')
+    @$rightPeelInner  = @$rightPeel.children()
     @$w = $(window)
 
   events:->
 
   describeSequence:->
     start = 1
+    dur = @frameDur
+    @leftPeelTween   = TweenMax.to @$leftPeel, 1, left: '-50%'
+    @controller.addTween start, @leftPeelTween,  dur/2
+    @leftPeelChildrenTween   = TweenMax.to @$leftPeelInner, 1, width: '100%'
+    @controller.addTween start, @leftPeelChildrenTween,  dur/2
+
+    @rightPeelTween   = TweenMax.to @$rightPeel, 1, left: '100%'
+    @controller.addTween start, @rightPeelTween,  dur/2
+    @rightPeelChildrenTween   = TweenMax.to @$rightPeelInner, 1, width: '100%'
+    @controller.addTween start, @rightPeelChildrenTween,  dur/2
+
+    start += dur
     dur = @frameDur
     @coverBaseShadowTween   = TweenMax.to @$baseShadow, 1, opacity: 1
     @coverBottomShadowTween = TweenMax.to @$bottomShadow, 1, opacity: .5
