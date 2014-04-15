@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1"
+	 id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="80px"
+	 viewBox="0 0 80 80" enable-background="new 0 0 80 80" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  y="3.25" x="-3.884" height="38.501" width="50.766" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<title>Slice 1</title>
+<description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+<g id="Page-1" sketch:type="MSPage" opacity="0.5">
+	<path id="Shape" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" d="M27.818,27.77l-6.096-0.004
+		l-0.004,6.107l-6.095-0.004l-0.008,12.216l6.096,0.003l-0.003,6.135l6.094,0.004L27.8,58.245l6.097,0.004l0.021-36.493
+		l-6.096-0.006L27.818,27.77z"/>
+	
+		<rect id="Rectangle" x="40.009" y="33.93" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" width="6.096" height="12.113">
+	</rect>
+	
+		<rect id="Rectangle_1_" x="34.009" y="33.93" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" width="6.096" height="12.113">
+	</rect>
+	<path id="Shape_1_" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" d="M46.092,46.104l6.095,0.003
+		l6.096,0.005l6.091,0.003l0.008-12.113l-6.093-0.004l-6.094-0.004L46.1,33.99L46.092,46.104z"/>
+	
+		<rect id="Rectangle_2_" x="28.009" y="30.936" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" width="6.094" height="6.107">
+	</rect>
+	
+		<rect id="Rectangle_3_" x="22.009" y="39.936" sketch:type="MSShapeGroup" fill="none" stroke="#FFFFFF" stroke-width="2" width="6.096" height="6.107">
+	</rect>
+</g>
+</svg>

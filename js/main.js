@@ -17,6 +17,8 @@
       this.$icon1 = $('#js-icon1 .box-icon__content');
       this.$icon2 = $('#js-icon2 .box-icon__content');
       this.$icon3 = $('#js-icon3 .box-icon__content');
+      this.$baseShadow = $('#js-base-shadow');
+      this.$bottomShadow = $('#js-bottom-shadow');
       return this.$w = $(window);
     };
 
@@ -26,6 +28,12 @@
       var dur, start;
       start = 1;
       dur = this.frameDur;
+      this.coverBaseShadowTween = TweenMax.to(this.$baseShadow, 1, {
+        opacity: 1
+      });
+      this.coverBottomShadowTween = TweenMax.to(this.$bottomShadow, 1, {
+        opacity: .5
+      });
       this.coverTween = TweenMax.to(this.$cover, 1, {
         rotationY: 120,
         rotationX: 65,
@@ -35,7 +43,7 @@
           return function() {
             var progress;
             progress = _this.coverTween.progress();
-            if (progress > .285) {
+            if (progress > .215) {
               _this.$icon1.css({
                 'z-index': 11
               });
@@ -44,7 +52,7 @@
                 'z-index': 1
               });
             }
-            if (progress > .345) {
+            if (progress > .255) {
               _this.$icon2.css({
                 'z-index': 11
               });
@@ -53,7 +61,7 @@
                 'z-index': 1
               });
             }
-            if (progress > .407) {
+            if (progress > .297) {
               return _this.$icon3.css({
                 'z-index': 11
               });
@@ -65,7 +73,9 @@
           };
         })(this)
       });
-      return this.controller.addTween(start, this.coverTween, dur);
+      this.controller.addTween(start, this.coverTween, dur);
+      this.controller.addTween(start, this.coverBaseShadowTween, dur / 2);
+      return this.controller.addTween(start, this.coverBottomShadowTween, dur / 2);
     };
 
     Main.prototype.initScroll = function() {

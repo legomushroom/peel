@@ -12,6 +12,8 @@ class Main
     @$icon1 = $('#js-icon1 .box-icon__content')
     @$icon2 = $('#js-icon2 .box-icon__content')
     @$icon3 = $('#js-icon3 .box-icon__content')
+    @$baseShadow = $('#js-base-shadow')
+    @$bottomShadow = $('#js-bottom-shadow')
     @$w = $(window)
 
   events:->
@@ -19,6 +21,8 @@ class Main
   describeSequence:->
     start = 1
     dur = @frameDur
+    @coverBaseShadowTween   = TweenMax.to @$baseShadow, 1, opacity: 1
+    @coverBottomShadowTween = TweenMax.to @$bottomShadow, 1, opacity: .5
     @coverTween  = TweenMax.to @$cover, 1,
       rotationY: 120
       rotationX: 65
@@ -26,22 +30,24 @@ class Main
       y: -400
       onUpdate: =>
         progress = @coverTween.progress()
-        if progress > .285
+        if progress > .215
           @$icon1.css 'z-index': 11
         else
           @$icon1.css 'z-index': 1
 
-        if progress > .345
+        if progress > .255
           @$icon2.css 'z-index': 11
         else
           @$icon2.css 'z-index': 1
 
-        if progress > .407
+        if progress > .297
           @$icon3.css 'z-index': 11
         else
           @$icon3.css 'z-index': 1
 
-    @controller.addTween start, @coverTween, dur
+    @controller.addTween start, @coverTween,              dur
+    @controller.addTween start, @coverBaseShadowTween,    dur/2
+    @controller.addTween start, @coverBottomShadowTween,  dur/2
 
   initScroll:->
     @scroller = new IScroll '#js-main',
