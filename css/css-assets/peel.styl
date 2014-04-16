@@ -25,7 +25,7 @@ body
 		position absolute
 		overflow hidden
 		&__inner
-			background lighten(#00AEFF, 20) url('i/dots-pattern.svg') left top
+			background lighten(#00AEFF, 10) url('i/dots-pattern.svg') left top
 			transform translateZ(0)
 			position absolute
 			rect 100%
@@ -35,7 +35,7 @@ body
 	&--left
 		left 0
 		.peel-item__white, .peel-item__gradient
-			right 0
+			right -1px
 		.peel-item__bg__inner
 			background-position right top
 		.peel-item__white
@@ -54,7 +54,7 @@ body
 	&--right
 		left 50%
 		.peel-item__white, .peel-item__gradient
-			left 0
+			left -1px
 		.peel-item__white
 			box-shadow 2px 2px gs rgba(0,0,0,.1), gs (- gs) 3*gs rgba(0,0,0,.1), -(gs) (- gs) 3*gs rgba(0,0,0,.1)
 		.peel-item__gradient
