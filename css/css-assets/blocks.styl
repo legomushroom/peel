@@ -2,11 +2,12 @@
 @import '../assets/imports.styl'
 
 
+corner = 30*gs
 .bow
 	width 60*gs
 	position absolute
 	left - 25*gs
-	top 19*gs
+	top corner - 35%
 	opacity .98
 	z-index 30
 	background url('i/bow.svg') no-repeat center center
@@ -15,20 +16,39 @@
 		padding-bottom 58.7360595%
 
 lineWidth = 75px
-corner = 30*gs
 .line-item
 	background rgba(dribbbleColor, .97)
-	width lineWidth
-	height 100%
 	position absolute
 	z-index 30
-	box-shadow 2px 2px 5px rgba(0,0,0,.25)
+	box-shadow 2px 2px 3px rgba(0,0,0,.15)
+	&:before, &:after
+		content ''
+		box-shadow inherit
+		background inherit
+		position absolute
+		width inherit
+		height inherit
 	&--vert
 		left corner
+		top  0%
+		width lineWidth
+		height 100%
+		transform-origin center top
+		&:before
+			top -100%
+			box-shadow 2px -3px 3px rgba(0,0,0,.15)
+		&:after
+			top 100%
 	&--hor
 		width 100%
+		left  0%
 		height lineWidth
 		top corner
+		&:before
+			left -100%
+			box-shadow 2px -3px 3px rgba(0,0,0,.15)
+		&:after
+			left 100%
 .svg-icon
 	&--twitter
 		fill twitterColor

@@ -25,6 +25,8 @@
       this.$rightPeel = $('#js-right-peel');
       this.$rightPeelInner = $('#js-right-inner');
       this.$rightPeelChildren = this.$rightPeel.children();
+      this.$line1 = $('#js-line1');
+      this.$line2 = $('#js-line2');
       return this.$w = $(window);
     };
 
@@ -33,6 +35,20 @@
     Main.prototype.describeSequence = function() {
       var dur, start;
       start = 1;
+      dur = this.frameDur;
+      this.line2Tween = TweenMax.to(this.$line2, 1, {
+        left: -300,
+        rotation: 15
+      });
+      this.controller.addTween(start, this.line2Tween, dur);
+      start += dur / 2;
+      dur = this.frameDur;
+      this.line1Tween = TweenMax.to(this.$line1, 1, {
+        top: -300,
+        rotation: 15
+      });
+      this.controller.addTween(start, this.line1Tween, dur);
+      start += dur - dur / 4;
       dur = this.frameDur;
       this.leftPeelTween = TweenMax.to(this.$leftPeel, 1, {
         left: '-50%'

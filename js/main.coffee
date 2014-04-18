@@ -20,12 +20,27 @@ class Main
     @$rightPeel = $('#js-right-peel')
     @$rightPeelInner  = $('#js-right-inner')
     @$rightPeelChildren  = @$rightPeel.children()
+    @$line1 = $('#js-line1')
+    @$line2 = $('#js-line2')
     @$w = $(window)
 
   events:->
 
   describeSequence:->
     start = 1
+    dur = @frameDur
+    @line2Tween  = TweenMax.to @$line2, 1, 
+      left: -300
+      rotation: 15
+    @controller.addTween start, @line2Tween,  dur
+    start += dur/2
+    dur = @frameDur
+    @line1Tween  = TweenMax.to @$line1, 1, 
+      top: -300
+      rotation: 15
+    @controller.addTween start, @line1Tween,  dur
+
+    start += dur - dur/4
     dur = @frameDur
     @leftPeelTween   = TweenMax.to @$leftPeel, 1, left: '-50%'
 
