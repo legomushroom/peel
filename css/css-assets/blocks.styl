@@ -1,6 +1,21 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
+lineWidth = 75px
+corner = 25*gs
+.line-item
+	background rgba(dribbbleColor, .95)
+	width lineWidth
+	height 100%
+	position absolute
+	z-index 30
+	box-shadow 2px 2px 5px rgba(0,0,0,.25)
+	&--vert
+		left corner
+	&--hor
+		width 100%
+		height lineWidth
+		top corner
 .svg-icon
 	&--twitter
 		fill twitterColor
