@@ -1,10 +1,23 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
+
+.bow
+	width 60*gs
+	position absolute
+	left - 25*gs
+	top 19*gs
+	opacity .98
+	z-index 30
+	background url('i/bow.svg') no-repeat center center
+	background-size 100% 100%
+	&__content
+		padding-bottom 58.7360595%
+
 lineWidth = 75px
-corner = 25*gs
+corner = 30*gs
 .line-item
-	background rgba(dribbbleColor, .95)
+	background rgba(dribbbleColor, .97)
 	width lineWidth
 	height 100%
 	position absolute
