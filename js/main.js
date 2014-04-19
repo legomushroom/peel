@@ -4,14 +4,14 @@
   Main = (function() {
     function Main() {
       this.vars();
-      this.events();
       this.initScroll();
       this.describeSequence();
+      this.suggestScroll();
+      this.hideCurtain();
     }
 
     Main.prototype.vars = function() {
-      this.maxScroll = -8000;
-      this.frameDur = 1000;
+      this.frameDur = 1500;
       this.$cover = $('#js-cover');
       this.$coverPlace = $('#js-cover-place');
       this.$icon1 = $('#js-icon1 .box-icon__content');
@@ -27,10 +27,38 @@
       this.$rightPeelChildren = this.$rightPeel.children();
       this.$line1 = $('#js-line1');
       this.$line2 = $('#js-line2');
+      this.$tag = $('#js-tag');
+      this.$scrollSuggest = $('#js-scroll-suggest');
+      this.$scrollSuggestMask = $('#js-scroll-suggest-mask');
+      this.$curtain = $('#js-curtain');
       return this.$w = $(window);
     };
 
-    Main.prototype.events = function() {};
+    Main.prototype.hideCurtain = function() {
+      return this.$curtain.fadeOut(1000);
+    };
+
+    Main.prototype.suggestScroll = function() {
+      return this.scrollSuggestTween = TweenMax.to(this.$scrollSuggest, .5, {
+        y: 10,
+        repeat: -1,
+        opacity: 1,
+        yoyo: true,
+        ease: Power2.easeIn
+      });
+    };
+
+    Main.prototype.stopScollSuggest = function() {
+      this.scrollSuggestTween.pause();
+      this.$scrollSuggest.hide();
+      return this.$scrollSuggestMask.hide();
+    };
+
+    Main.prototype.playScollSuggest = function() {
+      this.$scrollSuggest.show();
+      this.$scrollSuggestMask.show();
+      return this.scrollSuggestTween.play();
+    };
 
     Main.prototype.describeSequence = function() {
       var dur, start;
@@ -38,26 +66,40 @@
       dur = this.frameDur;
       this.line2Tween = TweenMax.to(this.$line2, 1, {
         left: -300,
-        rotation: 15
+        rotation: 15,
+        onStart: (function(_this) {
+          return function() {
+            return _this.stopScollSuggest();
+          };
+        })(this),
+        onReverseComplete: (function(_this) {
+          return function() {
+            return _this.playScollSuggest();
+          };
+        })(this)
       });
       this.controller.addTween(start, this.line2Tween, dur);
-      start += dur / 2;
+      this.tagTween = TweenMax.to(this.$tag, 1, {
+        rotation: 35
+      });
+      this.controller.addTween(start, this.tagTween, dur);
+      start += dur / 2.5;
       dur = this.frameDur;
       this.line1Tween = TweenMax.to(this.$line1, 1, {
         top: -300,
         rotation: 15
       });
       this.controller.addTween(start, this.line1Tween, dur);
-      start += dur - dur / 4;
-      dur = this.frameDur;
+      start += dur - dur / 3;
+      dur = this.frameDur - this.frameDur / 4;
       this.leftPeelTween = TweenMax.to(this.$leftPeel, 1, {
         left: '-50%'
       });
-      this.controller.addTween(start, this.leftPeelTween, dur / 2);
+      this.controller.addTween(start, this.leftPeelTween, dur);
       this.leftPeelChildrenTween = TweenMax.to(this.$leftPeelChildren, 1, {
         width: '100%'
       });
-      this.controller.addTween(start, this.leftPeelChildrenTween, dur / 2);
+      this.controller.addTween(start, this.leftPeelChildrenTween, dur);
       this.leftPeelTweenInner = TweenMax.to(this.$leftPeelInner, 1, {
         left: '100%',
         onStart: (function(_this) {
@@ -81,20 +123,20 @@
           };
         })(this)
       });
-      this.controller.addTween(start, this.leftPeelTweenInner, dur / 2);
+      this.controller.addTween(start, this.leftPeelTweenInner, dur);
       this.rightPeelTween = TweenMax.to(this.$rightPeel, 1, {
         left: '100%'
       });
-      this.controller.addTween(start, this.rightPeelTween, dur / 2);
+      this.controller.addTween(start, this.rightPeelTween, dur);
       this.rightPeelChildrenTween = TweenMax.to(this.$rightPeelChildren, 1, {
         width: '100%'
       });
-      this.controller.addTween(start, this.rightPeelChildrenTween, dur / 2);
+      this.controller.addTween(start, this.rightPeelChildrenTween, dur);
       this.rightPeelTweenInner = TweenMax.to(this.$rightPeelInner, 1, {
         left: '-100%'
       });
-      this.controller.addTween(start, this.rightPeelTweenInner, dur / 2);
-      start += dur / 2;
+      this.controller.addTween(start, this.rightPeelTweenInner, dur);
+      start += dur;
       dur = this.frameDur;
       this.coverBaseShadowTween = TweenMax.to(this.$baseShadow, 1, {
         opacity: 1
@@ -143,7 +185,8 @@
       });
       this.controller.addTween(start, this.coverTween, dur);
       this.controller.addTween(start, this.coverBaseShadowTween, dur / 2);
-      return this.controller.addTween(start, this.coverBottomShadowTween, dur / 2);
+      this.controller.addTween(start, this.coverBottomShadowTween, dur / 2);
+      return this.maxScroll = -(start + dur / 2);
     };
 
     Main.prototype.initScroll = function() {

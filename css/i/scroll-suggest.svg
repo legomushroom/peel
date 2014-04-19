@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="25px" viewBox="0 0 14 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0 (7573) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <circle id="Oval-15" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="6.5" cy="1.5" r="1.5"></circle>
+        <circle id="Oval-16" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="6.5" cy="7.5" r="1.5"></circle>
+        <circle id="Oval-17" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="6.5" cy="13.5" r="1.5"></circle>
+        <path d="M6.65710449,22.518983 L11.0140293,18.1620582 C11.1937966,17.9822909 11.4969129,17.9776646 11.681016,18.1617676 C11.8597348,18.3404865 11.864989,18.6444908 11.6807254,18.8287543 L7.01443346,23.4950463 C6.91726729,23.5922125 6.78406446,23.6382109 6.65309671,23.6308957 C6.5259511,23.6361826 6.39640027,23.5916711 6.29977553,23.4950463 L1.63348355,18.8287543 C1.45371626,18.648987 1.44908993,18.3458707 1.63319299,18.1617676 C1.81191183,17.9830488 2.11591618,17.9777946 2.30017971,18.1620582 L6.65710449,22.518983 Z" id="Rectangle-13" stroke="#FFFFFF" stroke-width="0.75" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

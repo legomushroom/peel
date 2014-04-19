@@ -25,7 +25,7 @@ body
 		position absolute
 		overflow hidden
 		&__inner
-			background lighten(#00AEFF, 0) url('i/dots-pattern.svg') left top
+			background lighten(#00AEFF, 0) url('i/dots-pattern.svg') left bottom
 			transform translateZ(0)
 			position absolute
 			rect 100%
@@ -37,9 +37,9 @@ body
 		.peel-item__white, .peel-item__gradient
 			right -1px
 		.peel-item__bg__inner
-			background-position right top
+			background-position right bottom
 		.peel-item__white
-			box-shadow 2px 2px gs rgba(0,0,0,.075), (- gs) (- gs) 3*gs rgba(0,0,0,.1)
+			box-shadow 2px 2px gs rgba(0,0,0,.075), (- gs) (- gs) 3*gs rgba(0,0,0,.125)
 		.peel-item__gradient
 			background: rgb(255,255,255); /* Old browsers */
 			background: -moz-linear-gradient(left,  rgba(255,255,255,1) 2%, rgba(230,230,230,1) 71%, rgba(238,238,238,1) 100%); /* FF3.6+ */
@@ -56,7 +56,7 @@ body
 		.peel-item__white, .peel-item__gradient
 			left -1px
 		.peel-item__white
-			box-shadow -2px 2px gs rgba(0,0,0,.075), gs (- gs) 3*gs rgba(0,0,0,.1)
+			box-shadow -2px 2px gs rgba(0,0,0,.075), gs (- gs) 3*gs rgba(0,0,0,.125)
 		.peel-item__gradient
 			background: rgb(238,238,238); /* Old browsers */
 			background: -moz-linear-gradient(left,  rgba(238,238,238,1) 0%, rgba(230,230,230,1) 29%, rgba(255,255,255,1) 98%); /* FF3.6+ */

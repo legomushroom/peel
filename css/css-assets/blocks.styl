@@ -1,6 +1,64 @@
 // BLOCKS
 @import '../assets/imports.styl'
 
+.curtain
+	background white
+	position absolute
+	z-index 50
+	rect 100%
+	nw 0
+
+.scroll-suggest
+	width 25px
+	position absolute
+	z-index 40
+	bottom gs
+	left 50%
+	background url('i/scroll-suggest.svg') no-repeat center center
+	background-size 100% 100%
+	opacity .25
+	transform translateY(-5px)
+	&__content
+		padding-bottom 184.6153846%
+	&--mask
+		z-index 20
+		opacity 1
+		rect 64px
+		// width 70px
+		bottom 0
+		// border-radius 50%
+		margin-left - 21px
+		// hl green
+		background twitterColor
+
+.thread-left
+	width 8*gs
+	background url('i/thread1.svg') no-repeat center center
+	background-size 100% 100%
+	&__content
+		padding-bottom 100%
+
+.thread-right
+	width 2*gs
+	background url('i/thread2.svg') no-repeat center center
+	background-size 100% 100%
+	&__content
+		padding-bottom 316.6666667%
+
+.tag
+	width 200px
+	position absolute
+	background url('i/tag.svg') no-repeat center center
+	background-size 100% 100%
+	display block
+	&__content
+		padding-bottom 180%
+	&__text
+		position absolute
+		bottom 4*gs
+		width 100%
+		text-align center
+		font-size 10px
 
 corner = 30*gs
 .bow
@@ -9,11 +67,25 @@ corner = 30*gs
 	left - 25*gs
 	top corner - 35%
 	opacity .98
-	z-index 30
 	background url('i/bow.svg') no-repeat center center
 	background-size 100% 100%
 	&__content
 		padding-bottom 58.7360595%
+	.tag
+		top 21*gs
+		left 19*gs
+		transform rotate(-20deg)
+		transform-origin center 8*gs
+		z-index 1
+	.thread-left, .thread-right
+		position absolute
+		top 20*gs
+		left corner - 6*gs + 1px
+		z-index 2
+	.thread-right
+		z-index 0
+		left corner + 2.5*gs + 1px
+		top 19.5*gs
 
 lineWidth = 75px
 .line-item
@@ -203,14 +275,6 @@ margin = 12px
 			height 360px
 			width 100%
 
-
-.scroll-suggest
-	background url('i/scroll-suggest.svg') no-repeat center center
-	width 13px
-	height 19px
-	position absolute
-	bottom 20px
-	left 50%
 
 .text
 	fill white

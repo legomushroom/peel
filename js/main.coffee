@@ -1,12 +1,13 @@
 class Main
   constructor:->
     @vars()
-    @events()
+    # @events()
     @initScroll()
     @describeSequence()
+    @suggestScroll()
+    @hideCurtain()
   vars:->
-    @maxScroll = -8000
-    @frameDur = 1000
+    @frameDur = 1500
     @$cover = $('#js-cover')
     @$coverPlace = $('#js-cover-place')
     @$icon1 = $('#js-icon1 .box-icon__content')
@@ -22,9 +23,32 @@ class Main
     @$rightPeelChildren  = @$rightPeel.children()
     @$line1 = $('#js-line1')
     @$line2 = $('#js-line2')
+    @$tag = $('#js-tag')
+    @$scrollSuggest = $('#js-scroll-suggest')
+    @$scrollSuggestMask = $('#js-scroll-suggest-mask')
+    @$curtain = $('#js-curtain')
     @$w = $(window)
 
-  events:->
+  hideCurtain:->
+    @$curtain.fadeOut(1000)
+
+  suggestScroll:->
+    @scrollSuggestTween = TweenMax.to @$scrollSuggest, .5, 
+      y: 10
+      repeat: -1
+      opacity: 1
+      yoyo: true
+      ease: Power2.easeIn
+
+  stopScollSuggest:->
+    @scrollSuggestTween.pause()
+    @$scrollSuggest.hide()
+    @$scrollSuggestMask.hide()
+
+  playScollSuggest:->
+    @$scrollSuggest.show()
+    @$scrollSuggestMask.show()
+    @scrollSuggestTween.play()
 
   describeSequence:->
     start = 1
@@ -32,21 +56,29 @@ class Main
     @line2Tween  = TweenMax.to @$line2, 1, 
       left: -300
       rotation: 15
+      onStart:=>
+        @stopScollSuggest()
+      onReverseComplete:=>
+        @playScollSuggest()
     @controller.addTween start, @line2Tween,  dur
-    start += dur/2
+    @tagTween  = TweenMax.to @$tag, 1, 
+      rotation: 35
+    @controller.addTween start, @tagTween,  dur
+    start += dur/2.5
     dur = @frameDur
     @line1Tween  = TweenMax.to @$line1, 1, 
       top: -300
       rotation: 15
     @controller.addTween start, @line1Tween,  dur
 
-    start += dur - dur/4
-    dur = @frameDur
-    @leftPeelTween   = TweenMax.to @$leftPeel, 1, left: '-50%'
 
-    @controller.addTween start, @leftPeelTween,  dur/2
+    # PEEL
+    start += dur - dur/3
+    dur = @frameDur - @frameDur/4
+    @leftPeelTween   = TweenMax.to @$leftPeel, 1, left: '-50%'
+    @controller.addTween start, @leftPeelTween,  dur
     @leftPeelChildrenTween   = TweenMax.to @$leftPeelChildren, 1, width: '100%'
-    @controller.addTween start, @leftPeelChildrenTween,  dur/2
+    @controller.addTween start, @leftPeelChildrenTween,  dur
     @leftPeelTweenInner   = TweenMax.to @$leftPeelInner , 1,
       left: '100%'
       onStart: =>
@@ -55,18 +87,16 @@ class Main
       onReverseComplete:=>
         if !@isChromeFix() then return
         @$leftPeelInner.css '-webkit-transform': 'translateX(0px)'
-
-    @controller.addTween start, @leftPeelTweenInner,  dur/2
-
+    @controller.addTween start, @leftPeelTweenInner,  dur
     @rightPeelTween   = TweenMax.to @$rightPeel, 1, left: '100%'
-    @controller.addTween start, @rightPeelTween,  dur/2
+    @controller.addTween start, @rightPeelTween,  dur
     @rightPeelChildrenTween = TweenMax.to @$rightPeelChildren, 1, width: '100%'
-    @controller.addTween start, @rightPeelChildrenTween,  dur/2
+    @controller.addTween start, @rightPeelChildrenTween,  dur
     @rightPeelTweenInner   = TweenMax.to @$rightPeelInner , 1, left: '-100%'
-    @controller.addTween start, @rightPeelTweenInner,  dur/2
+    @controller.addTween start, @rightPeelTweenInner,  dur
 
-
-    start += dur/2
+    # COVER
+    start += dur
     dur = @frameDur
     @coverBaseShadowTween   = TweenMax.to @$baseShadow, 1, opacity: 1
     @coverBottomShadowTween = TweenMax.to @$bottomShadow, 1, opacity: .5
@@ -96,6 +126,9 @@ class Main
     @controller.addTween start, @coverBaseShadowTween,    dur/2
     @controller.addTween start, @coverBottomShadowTween,  dur/2
 
+    @maxScroll = - (start + dur/2)
+
+
   initScroll:->
     @scroller = new IScroll '#js-main',
       probeType: 3
@@ -123,6 +156,7 @@ class Main
     wrapper
 
   isChromeFix:->
+    # false
     ver = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)?[1], 10)
     (ver > 33) and (navigator.userAgent.toLowerCase().indexOf('chrome') > -1)
 
