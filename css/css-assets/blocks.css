@@ -1,0 +1,370 @@
+.curtain {
+  background: #fff;
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.scroll-suggest {
+  width: 25px;
+  position: absolute;
+  z-index: 40;
+  bottom: 8px;
+  left: 50%;
+  background: url("i/scroll-suggest.svg") no-repeat center center;
+  background-size: 100% 100%;
+  opacity: 0.25;
+  transform: translateY(-5px);
+}
+.scroll-suggest__content {
+  padding-bottom: 184.6153846%;
+}
+.scroll-suggest--mask {
+  z-index: 20;
+  opacity: 1;
+  width: 64px;
+  height: 64px;
+  bottom: 0;
+  margin-left: -21px;
+  background: #00aeff;
+}
+.thread-left {
+  width: 64px;
+  background: url("i/thread1.svg") no-repeat center center;
+  background-size: 100% 100%;
+}
+.thread-left__content {
+  padding-bottom: 100%;
+}
+.thread-right {
+  width: 16px;
+  background: url("i/thread2.svg") no-repeat center center;
+  background-size: 100% 100%;
+}
+.thread-right__content {
+  padding-bottom: 316.6666667%;
+}
+.tag {
+  width: 200px;
+  position: absolute;
+  background: url("i/tag.svg") no-repeat center center;
+  background-size: 100% 100%;
+  display: block;
+}
+.ie .tag,
+.tag__content {
+  padding-bottom: 180%;
+}
+.tag__text {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+.bow {
+  width: 480px;
+  position: absolute;
+  left: -200px;
+  top: 156px;
+  opacity: 0.98;
+  background: url("i/bow.svg") no-repeat center center;
+  background-size: 100% 100%;
+}
+.bow__content {
+  padding-bottom: 58.7360595%;
+}
+.bow .tag {
+  top: 168px;
+  left: 152px;
+  transform: rotate(-20deg);
+  transform-origin: center 64px;
+  z-index: 1;
+}
+.bow .thread-left,
+.bow .thread-right {
+  position: absolute;
+  top: 160px;
+  left: 193px;
+  z-index: 2;
+}
+.bow .thread-right {
+  z-index: 0;
+  left: 261px;
+  top: 156px;
+}
+.line-item {
+  background: rgba(252,70,173,0.97);
+  position: absolute;
+  z-index: 30;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.15);
+}
+.line-item:before,
+.line-item:after {
+  content: '';
+  box-shadow: inherit;
+  background: inherit;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+.line-item--vert {
+  left: 240px;
+  top: 0%;
+  width: 75px;
+  height: 100%;
+  transform-origin: center top;
+}
+.line-item--vert:before {
+  top: -100%;
+  box-shadow: 2px -3px 3px rgba(0,0,0,0.15);
+}
+.line-item--vert:after {
+  top: 100%;
+}
+.line-item--hor {
+  width: 100%;
+  left: 0%;
+  height: 75px;
+  top: 240px;
+}
+.line-item--hor:before {
+  left: -100%;
+  box-shadow: 2px -3px 3px rgba(0,0,0,0.15);
+}
+.line-item--hor:after {
+  left: 100%;
+}
+.svg-icon--twitter {
+  fill: #00aeff;
+}
+.svg-icon--dribbble {
+  fill: #fc46ad;
+}
+.svg-icon--github {
+  fill: #4d4d4d;
+}
+.box-icon {
+  width: 7.5%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -3.75%;
+}
+.box-icon--one {
+  margin-left: -18.75%;
+}
+.box-icon--two {
+  margin-left: -3.75%;
+}
+.box-icon--three {
+  margin-left: 11.25%;
+}
+.box-icon__content {
+  padding-bottom: 100%;
+  z-index: 1;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+.box-icon__content:hover {
+  cursor: pointer;
+}
+.box-icon__content:hover .svg-icon--twitter {
+  fill: #00a7f5;
+}
+.box-icon__content:hover .svg-icon--dribbble {
+  fill: #fc2da2;
+}
+.box-icon__content:hover .svg-icon--github {
+  fill: #404040;
+}
+.box-icon__shadow {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 32%;
+  left: 35%;
+  height: 100%;
+  width: 200%;
+  background: url("i/icon-gradient.svg") no-repeat left top;
+  background-size: 100% 100%;
+  transform: rotate(20deg);
+}
+.box-icon svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+.box {
+  transform-style: preserve3d;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+}
+.box__item {
+  position: absolute;
+}
+.box__item:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("i/shadow-mask.png") no-repeat center center;
+  opacity: 0.12;
+  background-size: 100% 100%;
+}
+.box__item--shadow {
+  height: 100%;
+  width: 100%;
+  background: url("i/box-shadow.png") no-repeat left center;
+  background-size: auto 100%;
+  box-shadow: none;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+  .box__item--shadow {
+    background: url("i/box-shadow@2x.png") no-repeat left center;
+    background-size: auto 100%;
+  }
+}
+.box__item--shadow:after {
+  display: none;
+}
+.box__item--base {
+  left: 12.95%;
+  right: 12.95%;
+  top: 12.95%;
+  bottom: 12.95%;
+  background: #e3e3e3;
+/* Old browsers */
+  background: -moz-linear-gradient(left, #dfdfdf 0%, #ededed 100%);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dfdfdf), color-stop(100%, #ededed));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #dfdfdf 0%, #ededed 100%);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #dfdfdf 0%, #ededed 100%);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #dfdfdf 0%, #ededed 100%);
+/* IE10+ */
+  background: linear-gradient(to right, #dfdfdf 0%, #ededed 100%);
+/* W3C */
+}
+.box__item--base:after {
+  display: none;
+}
+.box__item--left {
+  top: 0;
+  left: 0;
+  background: #fff;
+/* Old browsers */
+  background: -moz-linear-gradient(left, #fff 0%, #e1e1e1 100%);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(100%, #e1e1e1));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #fff 0%, #e1e1e1 100%);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #fff 0%, #e1e1e1 100%);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #fff 0%, #e1e1e1 100%);
+/* IE10+ */
+  background: linear-gradient(to right, #fff 0%, #e1e1e1 100%);
+/* W3C */
+}
+.box__item--right {
+  top: 0;
+  right: 0;
+  background-image: -o-linear-gradient(0deg, #fff 0%, #e8e8e8 100%);
+  background-image: -moz-linear-gradient(0deg, #fff 0%, #e8e8e8 100%);
+  background-image: -webkit-linear-gradient(0deg, #fff 0%, #e8e8e8 100%);
+  background-image: -ms-linear-gradient(0deg, #fff 0%, #e8e8e8 100%);
+  background-image: linear-gradient(-90deg, #fff 0%, #e8e8e8 100%);
+}
+.box__item--right:after {
+  opacity: 0.02;
+}
+.box__item--left,
+.box__item--right {
+  height: 100%;
+  width: 12.95%;
+}
+.box__item--top {
+  transform: rotateX(-75.5deg);
+  transform-origin: 50% top;
+  top: 0;
+  left: 0;
+  background: #fff;
+/* Old browsers */
+  background: -moz-linear-gradient(top, #fff 0%, #e1e1e1 100%);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #e1e1e1));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fff 0%, #e1e1e1 100%);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fff 0%, #e1e1e1 100%);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fff 0%, #e1e1e1 100%);
+/* IE10+ */
+  background: linear-gradient(to bottom, #fff 0%, #e1e1e1 100%);
+/* W3C */
+}
+.box__item--top:after {
+  transform: rotate(180deg);
+  opacity: 0.01;
+}
+.box__item--bottom {
+  transform: rotateX(75.5deg);
+  transform-origin: 50% bottom;
+  bottom: 0;
+  left: 0;
+  background-image: -o-linear-gradient(90deg, #fff 0%, #e1e1e1 100%);
+  background-image: -moz-linear-gradient(90deg, #fff 0%, #e1e1e1 100%);
+  background-image: -webkit-linear-gradient(90deg, #fff 0%, #e1e1e1 100%);
+  background-image: -ms-linear-gradient(90deg, #fff 0%, #e1e1e1 100%);
+  background-image: linear-gradient(0deg, #fff 0%, #e1e1e1 100%);
+}
+.box__item--bottom:after {
+  transform: rotate(180deg);
+  opacity: 0.01;
+}
+.box__item--top,
+.box__item--bottom {
+  height: 360px;
+  width: 100%;
+}
+.text {
+  fill: #fff;
+  font-size: 22px;
+  white-space: nowrap;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+.text--label {
+  font-size: 13px;
+}
+.svg-container {
+  padding-bottom: 70.3125%;
+  position: relative;
+}
+.svg-container__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.svg-container__content svg {
+  width: 100%;
+  height: 100%;
+}

@@ -2,10 +2,11 @@ class Main
   constructor:->
     @vars()
     # @events()
+    @fixIETag()
     @initScroll()
     @describeSequence()
     @suggestScroll()
-    @hideCurtain()
+    # @hideCurtain()
   vars:->
     @frameDur = 1500
     @$cover = $('#js-cover')
@@ -33,7 +34,7 @@ class Main
     @$curtain.fadeOut(1000)
 
   suggestScroll:->
-    @scrollSuggestTween = TweenMax.to @$scrollSuggest, .5, 
+    @scrollSuggestTween = TweenMax.to @$scrollSuggest, .5,
       y: 10
       repeat: -1
       opacity: 1
@@ -53,7 +54,7 @@ class Main
   describeSequence:->
     start = 1
     dur = @frameDur
-    @line2Tween  = TweenMax.to @$line2, 1, 
+    @line2Tween  = TweenMax.to @$line2, 1,
       left: -300
       rotation: 15
       onStart:=>
@@ -61,12 +62,12 @@ class Main
       onReverseComplete:=>
         @playScollSuggest()
     @controller.addTween start, @line2Tween,  dur
-    @tagTween  = TweenMax.to @$tag, 1, 
+    @tagTween  = TweenMax.to @$tag, 1,
       rotation: 35
     @controller.addTween start, @tagTween,  dur
     start += dur/2.5
     dur = @frameDur
-    @line1Tween  = TweenMax.to @$line1, 1, 
+    @line1Tween  = TweenMax.to @$line1, 1,
       top: -300
       rotation: 15
     @controller.addTween start, @line1Tween,  dur
@@ -129,6 +130,10 @@ class Main
     @maxScroll = - (start + dur/2)
 
 
+  fixIETag:->
+    if !@isIE() then return
+    $(document.body).addClass 'ie'
+
   initScroll:->
     @scroller = new IScroll '#js-main',
       probeType: 3
@@ -162,5 +167,23 @@ class Main
 
   isFF:->
     navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+  isIE:->
+    if @isIECache then return @isIECache
+    undef = undefined # Return value assumes failure.
+    rv = -1
+    ua = window.navigator.userAgent
+    msie = ua.indexOf("MSIE ")
+    trident = ua.indexOf("Trident/")
+    if msie > 0
+      
+      # IE 10 or older => return version number
+      rv = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10)
+    else if trident > 0
+      
+      # IE 11 (or newer) => return version number
+      rvNum = ua.indexOf("rv:")
+      rv = parseInt(ua.substring(rvNum + 3, ua.indexOf(".", rvNum)), 10)
+    @isIECache = (if (rv > -1) then rv else undef)
+    @isIECache
 
 new Main

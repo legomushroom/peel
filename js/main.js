@@ -4,10 +4,10 @@
   Main = (function() {
     function Main() {
       this.vars();
+      this.fixIETag();
       this.initScroll();
       this.describeSequence();
       this.suggestScroll();
-      this.hideCurtain();
     }
 
     Main.prototype.vars = function() {
@@ -189,6 +189,13 @@
       return this.maxScroll = -(start + dur / 2);
     };
 
+    Main.prototype.fixIETag = function() {
+      if (!this.isIE()) {
+        return;
+      }
+      return $(document.body).addClass('ie');
+    };
+
     Main.prototype.initScroll = function() {
       var it;
       this.scroller = new IScroll('#js-main', {
@@ -237,6 +244,26 @@
 
     Main.prototype.isFF = function() {
       return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    };
+
+    Main.prototype.isIE = function() {
+      var msie, rv, rvNum, trident, ua, undef;
+      if (this.isIECache) {
+        return this.isIECache;
+      }
+      undef = void 0;
+      rv = -1;
+      ua = window.navigator.userAgent;
+      msie = ua.indexOf("MSIE ");
+      trident = ua.indexOf("Trident/");
+      if (msie > 0) {
+        rv = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10);
+      } else if (trident > 0) {
+        rvNum = ua.indexOf("rv:");
+        rv = parseInt(ua.substring(rvNum + 3, ua.indexOf(".", rvNum)), 10);
+      }
+      this.isIECache = (rv > -1 ? rv : undef);
+      return this.isIECache;
     };
 
     return Main;

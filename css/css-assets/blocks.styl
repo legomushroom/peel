@@ -51,6 +51,8 @@
 	background url('i/tag.svg') no-repeat center center
 	background-size 100% 100%
 	display block
+	.ie & 
+		background-image url('i/tag-ie.svg')
 	&__content
 		padding-bottom 180%
 	&__text
@@ -68,7 +70,7 @@ corner = 30*gs
 	top corner - 35%
 	opacity .98
 	background url('i/bow.svg') no-repeat center center
-	background-size 100% 100%
+	background-size auto 100%
 	&__content
 		padding-bottom 58.7360595%
 	.tag
