@@ -89,8 +89,6 @@ gulp.task('default', function(){
 
 	gulp.watch(paths.src.css, function(e){
 		gulp.run('stylus');
-		// server.changed(e.path)
-		// console.log(e.path);
 	});
 
 	gulp.watch(paths.src.js, function(e){
