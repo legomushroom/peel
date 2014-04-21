@@ -16,9 +16,7 @@ var karma 				= require('gulp-karma');
 var devFolder 	= '';
 var distFolder  = '';
 
-var testFiles = [
-			'spec/**/*.js'
-		];
+var testFiles = [ 'spec/**/*.js' ];
 
 var paths = {
 	src: {
@@ -125,8 +123,6 @@ gulp.task('default', function(){
 		gulp.run('index:jade');
 		// server.changed(e.path);
 	});
-
-
 });
 
 
