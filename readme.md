@@ -1,4 +1,4 @@
-Use case example for [text animation](http://blog.legomushroom.com/2014/04/text-animation-path/)
+Use case example for [paper peel effect](http://blog.legomushroom.com/2014/04/paper-peel-effect/)
 blog post.
 
 ---------------------
